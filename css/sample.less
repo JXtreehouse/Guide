@@ -1,0 +1,81 @@
+@height : 150px;
+html, body {
+    height: 100%;
+}
+.wrapper-sam {
+    height: calc(~"100% - @{height}");
+}
+.content {
+    margin: 24px 0 8px 0;
+    overflow: hidden;
+    height: 100%;
+    .content-nav {
+        float: left;
+        width: 12%;
+        padding: 14px 28px;
+        border: 1px solid rgba(0, 0, 0, .1);
+        word-wrap: break-word;
+        ul {
+            li {
+                a {
+                    font-size: 16px;
+                    line-height: 45px;
+                    // font-weight: 700;
+                    color: #000;
+                    &:hover {
+                        color: green;
+                    }
+                }
+                a.active {
+                    color: green;
+                }
+            }
+        }
+    }
+    .content-middle {
+        float: left;
+        // margin: 0 0 0 12px;
+        width: 44%;
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, .1);
+        .content-section {
+            position: relative;
+            float: left;
+            width: 100%;
+            height: 100%;
+            .btn {
+                width: 100px;
+                height: 30px;
+                border: 1px solid #000;
+                border-radius: 5px;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                color: #fff;
+                z-index: 2;
+                cursor: pointer;
+            }
+            .editor {
+                margin: 0;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+    .content-browser {
+        float: left;
+        width: 44%;
+        height: 100%;
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .content-notebook, .content-demo {
+        float: left;
+        width: 88%;
+    }
+}

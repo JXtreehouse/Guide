@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!-- //不缓存 -->
+  <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+  <META HTTP-EQUIV="expires" CONTENT="0">
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        overflow: hidden;
+    }
+
+    #div3d {
+        width: 100%;
+        height: 100%;
+    }
+  </style>
+</head>
+<body>
+    <div id="div3d"></div>
+<script src="https://speech.uinnova.com/static/release/thing3d.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    window.onload = function () {
+        parent.window.onload = parent.window.f1;
+    }
+</script>
+<script></script>
+</body>
+</html>

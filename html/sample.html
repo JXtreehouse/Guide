@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thing3d-API</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/sample.css">
+</head>
+<body>
+    <script src="../js/header.js"></script>
+    <div class="wrapper-sam">
+        <div class="content clearfix">
+            <script src="../js/nav_sample.js"></script>
+            <div class="content-middle">
+                <div class="content-section">
+                    <div id="btn" class="btn">提交代码</div>
+                    <pre id="editor" class="editor">// 初始化Ting3d实例
+var app = new t3d.App({ el: &quot;div3d&quot; });
+console.log(app);
+// 创建物体
+var box = app.create({ type: &#x27;Box&#x27; });
+// 物体添加update事件
+app.on(&#x27;update&#x27;, function() {
+    box.rotateY(60*app.deltaTime);
+});
+// 相机朝向
+app.camera.lookAt(box);</pre>
+                </div>
+            </div>
+            <div class="content-browser">
+                <iframe id="ifId" name="ifName" src="./ex1.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="footer">北京优锘科技有限公司</div> -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
+    <script src="../js/sample.js"></script>
+</body>
+</html>
