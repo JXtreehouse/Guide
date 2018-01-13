@@ -5,5 +5,6 @@ var app = new t3d.App({
     url: 'https://speech.uinnova.com/static/models/hw2', // 所渲染的3D模型
     complete: function () { // 加载完成回调    
         console.log("app scene loaded");
+        app.buildings[0].floors[0].roofNode.visible = false;
     }
 });

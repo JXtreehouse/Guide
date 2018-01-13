@@ -44,7 +44,7 @@
     &lt;!-- 为3D准备一个具备大小(宽高)的DOM容器 --&gt;
     &lt;div id=&quot;div3d&quot; style=&quot;width: 800px; height: 600px&quot;&gt;&lt;/div&gt;
     &lt;!-- 引入 Thing3d 文件 --&gt;
-    &lt;script src=&quot;../dist/thing3d.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://speech.uinnova.com/static/release/thing3d.min.js&quot;&gt;&lt;/script&gt;
     &lt;!-- 3D模型js --&gt;
     &lt;script&gt;
         // 3D加载显示
@@ -54,6 +54,7 @@
             url: &#x27;https://speech.uinnova.com/static/models/hw2&#x27;, // 所渲染的3D模型
             complete: function () { // 加载完成回调    
                 console.log(&quot;app scene loaded&quot;);
+                app.buildings[0].floors[0].roofNode.visible = false;
             }
         });
     &lt;/script&gt;
