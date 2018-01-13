@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/guide.css">
+    <link rel="icon" sizes="any" mask="" href="../favicon.ico">
     <script src="../lib/prism/prism.js"></script>
 </head>
 <body>
@@ -37,26 +38,24 @@
     &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
     &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
+    &lt;title&gt;thind3d加载显示&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;!-- 为3D准备一个具备大小(宽高)的DOM容器 --&gt;
-    &lt;div id=&quot;div3d&quot; style=&quot;width: 400px; height: 300px&quot;&gt;&lt;/div&gt;
-    
+    &lt;div id=&quot;div3d&quot; style=&quot;width: 800px; height: 600px&quot;&gt;&lt;/div&gt;
     &lt;!-- 引入 Thing3d 文件 --&gt;
-    &lt;script src=&quot;https://speech.uinnova.com/static/release/thing3d.min.js&quot;&gt;&lt;/script&gt;
-
+    &lt;script src=&quot;../dist/thing3d.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 3D模型js --&gt;
     &lt;script&gt;
-        // 初始化Ting3d实例
-        var app = new t3d.App({ el: &quot;div3d&quot; });
-        // 创建物体
-        var box = app.create({ type: &#x27;Box&#x27; });
-        // 物体添加update事件
-        app.on(&#x27;update&#x27;, function() {
-            box.rotateY(60*app.deltaTime);
+        // 3D加载显示
+        var app = new t3d.App({
+            el: &#x27;div3d&#x27;,  // 渲染到dom
+            ak: &#x27;app_test_key&#x27;,      // 密钥
+            url: &#x27;https://speech.uinnova.com/static/models/hw2&#x27;, // 所渲染的3D模型
+            complete: function () { // 加载完成回调    
+                console.log(&quot;app scene loaded&quot;);
+            }
         });
-        // 相机朝向
-        app.camera.lookAt(box);
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>

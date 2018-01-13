@@ -1,12 +1,10 @@
+var pathname = window.location.pathname;
 document.write('<div class="content-nav">'
 +'<ul>'
-    +'<li><a class="active" ui-sref="">快速开始</a></li>'
-    +'<li><a href="./load.html">加载3D场景</a></li>'
-    +'<li><a href="">场景对象</a></li>'
-    +'<li><a href="">3D与事件</a></li>'
-    +'<li><a href="">3D选择器</a></li>'
-    +'<li><a href="">3D控件</a></li>'
-    +'<li><a href="">面板UI</a></li>'
-    +'<li><a href="">3D动画</a></li>'
+    +'<li><a class="'+ ((pathname.indexOf('demo_') === -1) || (pathname.indexOf('demo') === -1) ? ' active ' : '') +'" href="./demo.html">小白楼</a></li>'
+    +'<li><a class="'+ (pathname.indexOf('subway')!==-1 ? ' active ' : '') +'" href="./demo_subway.html">韩国地铁导航</a></li>'
+    +'<li><a class="'+ (pathname.indexOf('security')!==-1 ? ' active ' : '') +'" href="./demo_security.html">地铁监控</a></li>'
+    +'<li><a class="'+ (pathname.indexOf('silohouse')!==-1 ? ' active ' : '') +'" href="./demo_silohouse.html">粮仓</a></li>'
+    +'<li><a class="'+ (pathname.indexOf('document')!==-1 ? ' active ' : '') +'" href="./demo_document.html">档案馆</a></li>'
 +'</ul>'
 +'</div>')

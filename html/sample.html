@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/sample.css">
+    <link rel="icon" sizes="any" mask="" href="../favicon.ico">
 </head>
 <body>
     <script src="../js/header.js"></script>
@@ -18,6 +19,7 @@
             <div class="content-middle">
                 <div class="content-section">
                     <div id="btn" class="btn">提交代码</div>
+                    <pre id="editor_html" class="editor active">&lt;div id=&quot;div3d&quot;&gt;&lt;/div&gt;</pre>
                     <pre id="editor" class="editor">// 初始化Ting3d实例
 var app = new t3d.App({ el: &quot;div3d&quot; });
 console.log(app);
@@ -29,6 +31,15 @@ app.on(&#x27;update&#x27;, function() {
 });
 // 相机朝向
 app.camera.lookAt(box);</pre>
+                    <pre id="editor_css" class="editor">#div3d {
+    width: 100%;
+    height: 100%;
+}</pre>
+                    <div class="btn-l">
+                        <p class="btn-p active">html</p>
+                        <p class="btn-p">js</p>
+                        <p class="btn-p">css</p>
+                    </div>
                 </div>
             </div>
             <div class="content-browser">
