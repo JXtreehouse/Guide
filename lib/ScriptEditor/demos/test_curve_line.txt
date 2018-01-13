@@ -1,0 +1,12 @@
+
+
+// 点列表
+var vecList = Vector3List();
+
+// 添加点到列表
+vecList.Add(Vector3(0,  0,  0));
+vecList.Add(Vector3(10, 0,  0));
+vecList.Add(Vector3(10, 0, 10));
+
+// 创建曲线
+util.createCurveLine(vecList, Color.green);

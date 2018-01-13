@@ -1,0 +1,17 @@
+
+// 创建物体，参数为模型id
+var obj = util.createObject("AB052B5B646E4A48B9C045096FF9B088");
+
+// 执行让物体到5米高的地方
+obj.setPosition(0, 5, 0);
+
+// 让物体倾斜45度
+obj.pitch(45);
+
+// 给物体添加重力，质量3千克
+obj.addGravity(3);
+
+// 每隔3秒，执行让物体到5米高的地方
+var id = util.setInterval(function() {
+	obj.setPosition(0, 5, 0);
+}, 3000);

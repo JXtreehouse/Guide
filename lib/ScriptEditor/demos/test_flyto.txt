@@ -1,0 +1,34 @@
+
+// 定义一个装物体的列表
+var objList = ObjectList();
+
+// 创建一批物体，按环形摆放
+for(var i = 0; i < 3; i ++) {
+	// 创建物体
+	var newObj = util.createObject("AB052B5B646E4A48B9C045096FF9B088");
+
+	// 每隔5米放一个物体
+	newObj.setPosition(i*5, 0, 0);
+
+	// 添加到物体列表
+	objList.Add(newObj);
+}
+
+// 跳转摄影机方法
+var j = 0;
+function flyToNext() {
+	// 从列表中选一个物体
+    var obj = objList.get_Item(j ++);
+
+	// 飞行到物体位置
+	util.flyTo (obj, Vector3(3, 4, 4), 2.0, function() {
+		util.setTimeout(flyToNext, 1.5); // 等1.5秒飞下一个
+	});
+
+    // 超过总数后，重新开始
+    if (j >= objList.Count)
+    	j = 0;
+};
+
+// 开始飞吧！
+flyToNext();
