@@ -29,12 +29,15 @@
 </head>
 <body>
     <div id="content"></div>
-<script src="https://speech.uinnova.com/static/release/thing3d.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    window.onload = function () {
-        parent.window.onload = parent.window.f1;
-    }
-</script>
+    <!-- <script src="https://speech.uinnova.com/static/release/thing3d.min.js"></script> -->
+    <script src="../../dist/thing3d.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/screenlog.js"></script>
+    <script>
+        window.onload = function () {
+            parent.window.onload = parent.window.f1;
+        }
+        screenLog.init();
+    </script>
 <script></script>
 </body>
 </html>

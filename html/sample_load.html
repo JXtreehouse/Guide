@@ -18,9 +18,8 @@
             <script src="../js/nav_sample.js"></script>
             <div class="content-middle">
                 <div class="content-section">
-                    <div id="btn" class="btn">提交代码</div>
-                    <pre id="editor_html" class="editor active">&lt;div id=&quot;div3d&quot;&gt;&lt;/div&gt;</pre>
-                    <pre id="editor" class="editor">var tree, buildings, floors, things, outdoor, outdoorThings;
+                    <div id="btn" class="btn">执行代码</div>
+                    <pre id="editor" class="editor active">var tree, buildings, floors, things, outdoor, outdoorThings;
 // 3D加载显示
 var app = new t3d.App({
     el: 'div3d',  // 渲染到dom
@@ -43,13 +42,14 @@ var app = new t3d.App({
         outdoorThings = tree.outdoor.things;
     }
 });</pre>   
+                    <pre id="editor_html" class="editor">&lt;div id=&quot;div3d&quot;&gt;&lt;/div&gt;</pre>
                     <pre id="editor_css" class="editor">#div3d {
     width: 100%;
     height: 100%;
 }</pre>
                     <div class="btn-l">
-                        <p class="btn-p active">html</p>
-                        <p class="btn-p">js</p>
+                        <p class="btn-p active">js</p>
+                        <p class="btn-p">html</p>
                         <p class="btn-p">css</p>
                     </div>
                 </div>
@@ -62,6 +62,7 @@ var app = new t3d.App({
     <!-- <div class="footer">北京优锘科技有限公司</div> -->
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ext-language_tools.js"></script>
     <script src="../js/sample.js"></script>
 </body>
 </html>
