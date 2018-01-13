@@ -115,7 +115,6 @@ editorCss.getSession().setMode("ace/mode/css");
 // 获取标签
 var btn = document.getElementById('btn');
 var iframe = document.getElementById('ifId');
-var iframe2 = document.getElementById('ifId2');
 
 // 获取代码添加到iframe页面中
 function f1() {
