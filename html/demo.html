@@ -1,28 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thing3d-API</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/sample.css">
-    <link rel="icon" sizes="any" mask="" href="../favicon.ico">
-</head>
-<body>
-    <script src="../js/header.js"></script>
-    <div class="wrapper-sam">
-        <div class="content clearfix">
-            <script src="../js/nav_demo.js"></script>
-            <div class="content-demo">
-                <iframe src="http://uinnova-t3d.gitee.io/uinnova" frameborder="0" style="width: 100%; height: 100%"></iframe>
-                <!-- iframe引入demo -->
-            </div>
+<div class="wrapper-sam">
+    <div class="content clearfix">
+        <div class="content-nav">
+            <ul>
+                <li><a onclick="manageDemo('./html/demo_uinnova.html')">小白楼</a></li>
+                <li><a onclick="manageDemo('./html/demo_subway.html')">韩国地铁导航</a></li>
+                <li><a onclick="manageDemo('./html/demo_security.html')">地铁监控</a></li>
+                <li><a onclick="manageDemo('./html/demo_silohouse.html')">粮仓</a></li>
+                <li><a onclick="manageDemo('./html/demo_document.html')">档案馆</a></li>
+            </ul>
         </div>
+        <div class="content-demo" id="content_demo"></div>
     </div>
-    <script src="../js/footer.js"></script>
-    
-</body>
-</html>
+</div>
+<script>
+    function manageDemo(url) {
+        $.ajax({
+            url: url,
+            type: 'get',
+            dataType: 'html',
+            success: function(htmlData) {
+                $('#content_demo').html(htmlData);
+            }
+        })
+    }
+    manageDemo('./html/demo_uinnova.html');
+</script>

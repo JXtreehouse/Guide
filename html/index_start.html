@@ -1,0 +1,47 @@
+<div class="content-middle">
+    <div class="content-section">
+        <h3 class="block-title text-left">快速入门指南</h3>
+        <small class="block-content text-left">本指南是面向Web开发者在建立Thing3d可视化应用时使用的快速入门指南</small>
+        <h5 class="block-title-arcticle text-left">1、准备开发环境</h5>
+        <p class="block-content-p">您可以下载安装并使用 Visual studio、Eclipse、Sublime Text、Webstorm等常用web开发工具。</p>
+        <h5 class="block-title-arcticle text-left">2、获取Thing3d</h5>
+        <p class="block-content-p">https://speech.uinnova.com/static/release/thing3d.min.js</p>
+        <h5 class="block-title-arcticle text-left">3、引入Thing3d</h5>
+        <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">&lt;script src=&quot;https://speech.uinnova.com/static/release/thing3d.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <h5 class="block-title-arcticle text-left">4、创建一个简单的几何体</h5>
+        <p class="block-content-p">在创建前我们需要为Thing3d准备一个具有宽高的DOM容器。</p>
+        <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">&lt;div id=&quot;div3d&quot; style=&quot;width: 800px; height: 600px&quot;&gt;&lt;/div&gt;</code></pre>
+        <p class="block-content-p">然后创建Thing3d示例，并通过create方法生成一个简单的几何体，下面是完整代码</p>
+        <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;thind3d加载显示&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 为3D准备一个具备大小(宽高)的DOM容器 --&gt;
+    &lt;div id=&quot;div3d&quot; style=&quot;width: 800px; height: 600px&quot;&gt;&lt;/div&gt;
+    &lt;!-- 引入 Thing3d 文件 --&gt;
+    &lt;script src=&quot;https://speech.uinnova.com/static/release/thing3d.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 3D模型js --&gt;
+    &lt;script&gt;
+        // 3D加载显示
+        var app = new t3d.App({
+            el: &#x27;div3d&#x27;,  // 渲染到dom
+            ak: &#x27;app_test_key&#x27;,      // 密钥
+            url: &#x27;https://speech.uinnova.com/static/models/hw2&#x27;, // 所渲染的3D模型
+            complete: function () { // 加载完成回调    
+                console.log(&quot;app scene loaded&quot;);
+                app.buildings[0].floors[0].roofNode.visible = false;
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p class="block-content-p">这样你的第一个3D就诞生了</p>
+        <div id="div3d" style="width: 928px; height: 300px"></div>
+    </div>
+</div>
+<script src="./js/index.js"></script>

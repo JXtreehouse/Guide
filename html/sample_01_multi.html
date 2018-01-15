@@ -1,0 +1,40 @@
+<div class="content-middle">
+    <div class="content-section">
+        <div id="btn" class="btn">执行代码</div>
+        <pre id="editor" class="editor active">// 创建第一个包含背景色的App并且看箱子
+var app1 = new t3d.App({container: "div3d", appKey: "app_test_key", background: 0x334455});
+var box1 = app1.create({ type: 'Box', position: [0, 0, 3] });
+app1.camera.lookAt(box1);
+
+// 创建第二个包含天空盒的App并且看箱子
+var app2 = new t3d.App({ container: "div3d2", appKey: "app_test_key", skyBox: 'SunCloud' });
+var box2 = app2.create({ type: 'Box', position: [0, 0, 4] });
+app2.camera.lookAt(box2);
+
+// 第一个App更新（箱子自转）
+app1.on('update', function () {
+	box1.rotateY(30*app1.deltaTime);
+});
+
+// 第二个App更新（箱子自转）
+app2.on('update', function () {
+	box2.rotateX(80*app2.deltaTime);
+});</pre>   
+        <pre id="editor_html" class="editor">&lt;div id=&quot;div3d&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;div3d2&quot;&gt;&lt;/div&gt;</pre>
+        <pre id="editor_css" class="editor">#div3d, #div3d2 {
+    width: 300px;
+    height: 400px;
+    float: left;
+}</pre>
+        <div class="btn-l">
+            <p class="btn-p active">js</p>
+            <p class="btn-p">html</p>
+            <p class="btn-p">css</p>
+        </div>
+    </div>
+</div>
+<div class="content-browser">
+    <iframe id="ifId" name="ifName" src="./html/ex1.html" frameborder="0"></iframe>
+</div>
+<script src="./js/sample.js"></script>

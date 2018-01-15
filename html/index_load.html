@@ -1,63 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thing3d-API</title>
-    <link rel="stylesheet" href="../lib/prism/prism.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/guide.css">
-    <link rel="icon" sizes="any" mask="" href="../favicon.ico">
-    <script src="../lib/prism/prism.js"></script>
-</head>
-<body>
-    <script src="../js/header.js"></script>
-    <div class="wrapper">
-        <div class="content clearfix">
-            <script src="../js/nav.js"></script>
-            <div class="content-middle">
-                <div class="content-section">
-                    <h3 class="block-title text-left">加载3D场景</h3>
-                    <small class="block-content text-left">本模块介绍3D初始化的配置</small>
-                    <h5 class="block-title-arcticle text-left">1、加载方法</h5>
-                    <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">var app = new t3d.App(options);</code></pre>
-                    <h5 class="block-title-arcticle text-left">2、option配置如下</h5>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>参数</th>
-                                <th>描述</th>
-                                <th>备注</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>el</td>
-                                <td>渲染到的DOM元素</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>ak</td>
-                                <td>密钥</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>url</td>
-                                <td>所渲染的3D模型路径</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>skyBox</td>
-                                <td>天空盒类型</td>
-                                <td>Night/BlueSky</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="block-content-p">加载方法</p>
-                    <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">var app = new t3d.App({
+<div class="content-middle">
+    <div class="content-section">
+        <h3 class="block-title text-left">加载3D场景</h3>
+        <small class="block-content text-left">本模块介绍3D初始化的配置</small>
+        <h5 class="block-title-arcticle text-left">1、加载方法</h5>
+        <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">var app = new t3d.App(options);</code></pre>
+        <h5 class="block-title-arcticle text-left">2、option配置如下</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>描述</th>
+                    <th>备注</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>el</td>
+                    <td>渲染到的DOM元素</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ak</td>
+                    <td>密钥</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>url</td>
+                    <td>所渲染的3D模型路径</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>skyBox</td>
+                    <td>天空盒类型</td>
+                    <td>Night/BlueSky</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="block-content-p">加载方法</p>
+        <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">var app = new t3d.App({
     el: &#x27;div3d&#x27;,  // 渲染到dom
     ak: &#x27;app_test_key&#x27;,      // 密钥
     url: &#x27;https://speech.uinnova.com/static/models/building&#x27;, // 所渲染的3D模型
@@ -65,8 +45,8 @@
         console.log(&quot;app scene loaded&quot;);
     }
 });</code></pre>
-                    <p class="block-content-p">完整代码</p>
-                    <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">&lt;!DOCTYPE html&gt;
+        <p class="block-content-p">完整代码</p>
+        <pre data-src="../lib/prism/prism.js" class="language-javascript"><code class="line-numbers language-javascript code-toolbar">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -107,15 +87,9 @@
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-                    <p class="block-content-p">加载后效果</p>
-                    <div id="div3d" style="width: 928px; height: 300px"></div>
-                </div>
-            </div>
-        </div>
+        <p class="block-content-p">加载后效果</p>
+        <div id="div3d" style="width: 928px; height: 300px"></div>
     </div>
-    <script src="../js/footer.js"></script>
+</div>
 
-    <script src="https://speech.uinnova.com/static/release/thing3d.min.js"></script>
-    <script src="../js/load.js"></script>
-</body>
-</html>
+<script src="./js/load.js"></script>

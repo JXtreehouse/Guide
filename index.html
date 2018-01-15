@@ -4,11 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Thing3d-API</title>
+    <link rel="stylesheet" href="./lib/prism/prism.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" sizes="any" mask="" href="./favicon.ico">
+    <script src="./lib/prism/prism.js"></script>
 </head>
 <body>
+    <div class="header">
+        <div class="title">
+            <div class="wrapper">
+                <h1 class="h1">Thing3d JavaScript API</h1>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="wrapper">
+                <ul id="ul1">
+                    <li><a class="nav-a" onclick="manageItem('./html/indexx.html')">快速入门</a></li>
+                    <li><a class="nav-a" onclick="manageItem('./html/notebook.html')">开发手册</a></li>
+                    <li><a class="nav-a" onclick="manageItem('./html/sample.html')">功能示例</a></li>
+                    <li><a class="nav-a" onclick="manageItem('./html/demo.html')">demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content"></div>
+    <!-- <div class="footer">北京优锘科技有限公司</div> -->
+    
+    <script src="https://speech.uinnova.com/static/release/thing3d.min.js"></script>
+    <script src="./lib/jquery-3.2.1.js"></script>
+    
     <script>
-        location.href = './html/index.html';    
+        function manageItem(url) {
+            $.ajax({
+                url: url,
+                type: 'get',
+                dataType: 'html',
+                success: function(htmlData) {
+                    $('#content').html(htmlData);
+                }
+            })
+        }
+        manageItem('./html/indexx.html');
     </script>
 </body>
 </html>

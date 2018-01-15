@@ -1,52 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thing3d-API</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/sample.css">
-    <link rel="icon" sizes="any" mask="" href="../favicon.ico">
-</head>
-<body>
-    <script src="../js/header.js"></script>
-    <div class="wrapper-sam">
-        <div class="content clearfix">
-            <script src="../js/nav_sample.js"></script>
-            <div class="content-middle">
-                <div class="content-section">
-                    <div id="btn" class="btn">执行代码</div>
-                    <pre id="editor" class="editor active">// 3D加载显示
-var app = new t3d.App({
-    el: 'div3d',  // 渲染到dom
-    ak: 'app_test_key',      // 密钥
-    url: 'https://speech.uinnova.com/static/models/hw2', // 所渲染的3D模型
-    complete: function () { // 加载完成回调    
-        console.log("app scene loaded");
-        app.buildings[0].floors[0].roofNode.visible = false;
-    }
-});</pre>
-                    <pre id="editor_html" class="editor ">&lt;div id=&quot;div3d&quot;&gt;&lt;/div&gt;</pre>
-                    <pre id="editor_css" class="editor">#div3d {
-    width: 100%;
-    height: 100%;
-}</pre>
-                    <div class="btn-l">
-                        <p class="btn-p active">js</p>
-                        <p class="btn-p">html</p>
-                        <p class="btn-p">css</p>
-                    </div>
-                </div>
-            </div>
-            <div class="content-browser">
-                <iframe id="ifId" name="ifName" src="./ex1.html" frameborder="0"></iframe>
-            </div>
+<div class="wrapper-sam">
+    <div class="content clearfix">
+        <div class="content-nav">
+            <ul id="list">
+                <li>
+                    <h4>开始</h4>
+                    <ul class="item">
+                        <li onclick="manageSample('./html/sample_01_HelloWorld.html')">HelloWorld</li>
+                        <li onclick="manageSample('./html/sample_01_DeveloperUseAppKey.html')">开发者key</li>
+                        <li onclick="manageSample('./html/sample_01_CreatePrimitives.html')">创建几何体</li>
+                        <li onclick="manageSample('./html/sample_01_Box.html')">创建立方体</li>
+                        <li onclick="manageSample('./html/sample_01_multi.html')">多场景</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>场景</h4>
+                    <ul class="item">
+                        <li onclick="manageSample('./html/sample_02_SceneThings.html')">场景对象</li>
+                        <!-- <li>场景结构</li> -->
+                    </ul>
+                </li>
+                <li>
+                    <h4>查询</h4>
+                    <ul class="item">
+                        <li onclick="manageSample('./html/sample_03_SceneGlobalQuery.html')">全局查询</li>
+                        <li onclick="manageSample('./html/sample_03_SceneLocalQuery.html')">局部查询</li>
+                        <li onclick="manageSample('./html/sample_03_SceneProcessQueryResult.html')">查询结构访问</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>事件</h4>
+                    <ul class="item">
+                        <li onclick="manageSample('./html/sample_04_GlobalEvents.html')">全局事件</li>
+                        <li onclick="manageSample('./html/sample_04_ThingEvents.html')">物体事件</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
+        <div id="content_sample" style="height: 100%"></div>
     </div>
-    <!-- <div class="footer">北京优锘科技有限公司</div> -->
-    <script src="../js/scr_sample.js"></script>
-</body>
-</html>
+</div>
+<script src="./lib/ScriptEditor/assets/plugin/ace-builds/src-noconflict/ace.js"></script>
+<script src="./lib/ScriptEditor/assets/plugin/ace-builds/src-noconflict/ext-language_tools.js"></script>
+<script src="./lib/ScriptEditor/assets/plugin/jquery/js/jquery-latest.js"></script>
+<script src="./lib/ScriptEditor/javascripts/nodejs.js"></script>
+<script src="./lib/ScriptEditor/demos/demos.js"></script>
+<script>
+    // 二级菜单
+    var oul = document.getElementById('list');
+    var oH4 = oul.getElementsByTagName('h4');
+    var aul = oul.getElementsByTagName('ul');
+    var aulList = [];
+    var aulList = [];
+    for(var i = 0, oh4Len = oH4.length; i < oh4Len; i++) {
+        aulList.push(aul[i]);
+        oH4[i].index  = i;
+        oH4[i].onclick = function(){
+            var _this = this.index;
+            for(var h = 0; h < aulList.length; h++) {
+                if (h != _this) {
+                    aulList[h].style.display='none';
+                    oH4[h].className ='';
+                } else {
+                    //如果当前的ul是关闭的，则展开，否则关闭
+                    if(this.className ==''){
+                        aul[_this].style.display = 'block';
+                        oH4[_this].className ='active';
+                    }else{
+                        aul[_this].style.display = 'none';
+                        oH4[_this].className ='';
+                    }
+                }
+            }
+        }
+    }
+    function manageSample(url) {
+        $.ajax({
+            url: url,
+            type: 'get',
+            dataType: 'html',
+            success: function(htmlData) {
+                $('#content_sample').html(htmlData);
+            }
+        })
+    }
+    manageSample('./html/sample_01_HelloWorld.html');
+</script>
