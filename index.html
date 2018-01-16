@@ -22,7 +22,7 @@
         <div class="nav">
             <div class="wrapper">
                 <ul id="ul1">
-                    <li><a class="nav-a" onclick="manageItem('./html/indexx.html')">快速入门</a></li>
+                    <li><a class="nav-a active" onclick="manageItem('./html/indexx.html')">快速入门</a></li>
                     <li><a class="nav-a" onclick="manageItem('./html/notebook.html')">开发手册</a></li>
                     <li><a class="nav-a" onclick="manageItem('./html/sample.html')">功能示例</a></li>
                     <li><a class="nav-a" onclick="manageItem('./html/demo.html')">demo</a></li>
@@ -48,6 +48,14 @@
             })
         }
         manageItem('./html/indexx.html');
+        $('#ul1').on('click','a',function(event){
+            var aObj = $('#ul1').find('.nav-a');
+            var target = $(event.target);
+            for(var i = 0, l = aObj.length; i < l; i++) {
+                $(aObj[i]).removeClass('active');
+            }
+            target.addClass('active');
+        })
     </script>
 </body>
 </html>

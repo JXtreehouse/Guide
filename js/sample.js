@@ -130,6 +130,9 @@ function f1() {
     var script = scripts[scripts.length-1];
     script.innerHTML = text;
 }
+iframe.onload = function(){ 
+    f1(); 
+}; 
 // 注册提交代码事件
 btn.onclick = function() {
     document.getElementById('ifId').contentWindow.location.reload(true); 
@@ -158,3 +161,5 @@ for(var i = 0; i < l; i++) {
         editorCss.setTheme("ace/theme/monokai");
     }
 }
+// setTimeout(f1, 3000);
+// f1();
