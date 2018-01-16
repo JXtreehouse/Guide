@@ -130,7 +130,9 @@ html, body {
         height: 100%;
         .content-nav {
             float: left;
-            width: 13%;
+            width: 14%;
+            height: 100%;
+            overflow: auto;
             padding: 14px 28px;
             border: 1px solid rgba(0, 0, 0, .1);
             word-wrap: break-word;
@@ -170,7 +172,16 @@ html, body {
                             text-indent: 12px;
                             padding: 4px;
                             cursor: pointer;
+                            &:hover {
+                                color: green;
+                            }
                         }
+                        li.active {
+                            color: green;
+                        }
+                        // &:nth-child(1) {
+                        //     display: block;
+                        // }
                     }
                 }
             }
@@ -231,7 +242,7 @@ html, body {
         }
         .content-browser {
             float: left;
-            width: 44%;
+            width: 43%;
             height: 100%;
             #ifId {
                 width: 100%;
@@ -246,7 +257,7 @@ html, body {
         }
         .content-demo {
             float: left;
-            width: 87%;
+            width: 86%;
             height: 100%;
         }
     }

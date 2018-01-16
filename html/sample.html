@@ -4,34 +4,34 @@
             <ul id="list">
                 <li>
                     <h4>开始</h4>
-                    <ul class="item">
-                        <li onclick="manageSample('./html/sample_01_HelloWorld.html')">HelloWorld</li>
-                        <li onclick="manageSample('./html/sample_01_DeveloperUseAppKey.html')">开发者key</li>
-                        <li onclick="manageSample('./html/sample_01_CreatePrimitives.html')">创建几何体</li>
-                        <li onclick="manageSample('./html/sample_01_Box.html')">创建立方体</li>
-                        <li onclick="manageSample('./html/sample_01_multi.html')">多场景</li>
+                    <ul class="item" style="display: block">
+                        <li id="hello" class="item-li active" onclick="manageSample('./html/sample_01_HelloWorld.html', this)">HelloWorld</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_01_DeveloperUseAppKey.html', this)">开发者key</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_01_CreatePrimitives.html', this)">创建几何体</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_01_Box.html', this)">创建立方体</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_01_multi.html', this)">多场景</li>
                     </ul>
                 </li>
                 <li>
                     <h4>场景</h4>
                     <ul class="item">
-                        <li onclick="manageSample('./html/sample_02_SceneThings.html')">场景对象</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_02_SceneThings.html', this)">场景对象</li>
                         <!-- <li>场景结构</li> -->
                     </ul>
                 </li>
                 <li>
                     <h4>查询</h4>
                     <ul class="item">
-                        <li onclick="manageSample('./html/sample_03_SceneGlobalQuery.html')">全局查询</li>
-                        <li onclick="manageSample('./html/sample_03_SceneLocalQuery.html')">局部查询</li>
-                        <li onclick="manageSample('./html/sample_03_SceneProcessQueryResult.html')">查询结构访问</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_03_SceneGlobalQuery.html', this)">全局查询</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_03_SceneLocalQuery.html', this)">局部查询</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_03_SceneProcessQueryResult.html', this)">查询结构访问</li>
                     </ul>
                 </li>
                 <li>
                     <h4>事件</h4>
                     <ul class="item">
-                        <li onclick="manageSample('./html/sample_04_GlobalEvents.html')">全局事件</li>
-                        <li onclick="manageSample('./html/sample_04_ThingEvents.html')">物体事件</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_04_GlobalEvents.html', this)">全局事件</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_04_ThingEvents.html', this)">物体事件</li>
                     </ul>
                 </li>
                 <li>
@@ -57,8 +57,8 @@
                 <li>
                     <h4>视角控制</h4>
                     <ul class="item">
-                        <li onclick="manageSample('./html/sample_06_LookAtObjects.html')">聚焦</li>
-                        <li onclick="manageSample('./html/sample_06_CameraFly.html')">飞行</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_06_LookAtObjects.html', this)">聚焦</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_06_CameraFly.html', this)">飞行</li>
                         <!-- <li onclick="">3D-2D切换</li> -->
                         <!-- <li onclick="">第一人称</li> -->
                     </ul>
@@ -66,14 +66,14 @@
                 <li>
                     <h4>界面</h4>
                     <ul class="item">
-                        <li onclick="manageSample('./html/sample_07_EmbeddedWebView.html')">内嵌页面</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_07_EmbeddedWebView.html', this)">内嵌页面</li>
                     </ul>
                 </li>
                 <li>
                     <h4>环境</h4>
                     <ul class="item">
-                        <li onclick="manageSample('./html/sample_08_SkyBox.html')">天空</li>
-                        <li onclick="manageSample('./html/sample_08_BackgroundColor.html')">背景色</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_08_SkyBox.html', this)">天空</li>
+                        <li class="item-li" onclick="manageSample('./html/sample_08_BackgroundColor.html', this)">背景色</li>
                         <!-- <li onclick="">灯光</li> -->
                     </ul>
                 </li>
@@ -116,15 +116,27 @@
             }
         }
     }
-    function manageSample(url) {
+
+    var liObj = $('.item-li');
+    // for(var i = 0, l = liObj.length; i < l; i++) {
+    //     liObj[i].onclick = function() {
+            
+    //     }
+    // }
+    function manageSample(url, target) {
+        var _this = target;
         $.ajax({
             url: url,
             type: 'get',
             dataType: 'html',
             success: function(htmlData) {
                 $('#content_sample').html(htmlData);
+                for(var j = 0, len = liObj.length; j < len; j++) {
+                    $(liObj[j]).removeClass('active');
+                }
+                $(_this).addClass('active');
             }
         })
     }
-    manageSample('./html/sample_01_HelloWorld.html');
+    manageSample('./html/sample_01_HelloWorld.html', $('#hello'));
 </script>
