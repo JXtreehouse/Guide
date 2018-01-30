@@ -1,0 +1,9 @@
+.wrapper {
+    height: 100%;
+    overflow: auto;
+}
+#div3d, #div3d2 {
+    float: left;
+    width: 400px;
+    height: 300px;
+}

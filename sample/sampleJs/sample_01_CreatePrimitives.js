@@ -1,7 +1,4 @@
-<div class="content-middle">
-    <div class="content-section">
-        <div id="btn" class="btn">执行代码</div>
-        <pre id="editor" class="editor active">// 创建App
+// 创建App
 // 创建App
 var app = new t3d.App({container: "div3d", appKey: "app_test_key" });
 
@@ -57,20 +54,4 @@ app.on('update', function() {
 });
                 
 // 设置最佳观看位置
-app.camera.fit();</pre>   
-        <pre id="editor_html" class="editor">&lt;div id=&quot;div3d&quot;&gt;&lt;/div&gt;</pre>
-        <pre id="editor_css" class="editor">#div3d {
-    width: 100%;
-    height: 100%;
-}</pre>
-        <div class="btn-l">
-            <p class="btn-p active">js</p>
-            <p class="btn-p">html</p>
-            <p class="btn-p">css</p>
-        </div>
-    </div>
-</div>
-<div class="content-browser">
-    <iframe id="ifId" name="ifName" src="./html/ex1.html" frameborder="0"></iframe>
-</div>
-<script src="./js/sample.js"></script>
+app.camera.fit();

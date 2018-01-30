@@ -5,48 +5,48 @@
                 <li>
                     <h4>开始</h4>
                     <ul class="item" style="display: block">
-                        <li id="hello" class="item-li active" onclick="manageSample('./html/sample_01_HelloWorld.html', this)">HelloWorld</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_01_DeveloperUseAppKey.html', this)">开发者key</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_01_CreatePrimitives.html', this)">创建几何体</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_01_Box.html', this)">创建立方体</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_01_multi.html', this)">多场景</li>
+                        <li id="hello" class="item-li active" onclick="manageSample(this, './sample/sampleJs/sample_01_Box.js')">HelloWorld</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_01_DeveloperUseAppKey.js')">开发者key</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_01_CreatePrimitives.js')">创建几何体</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_01_Box.js')">创建立方体</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_01_multi.js', './sample/sampleHtml/sample_01_multi.html', './sample/sampleCss/sample_01_multi.css')">多场景</li>
                     </ul>
                 </li>
                 <li>
                     <h4>场景</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample('./html/sample_02_SceneThings.html', this)">场景对象</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_02_SceneThings.js')">场景对象</li>
                         <!-- <li>场景结构</li> -->
                     </ul>
                 </li>
                 <li>
                     <h4>查询</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample('./html/sample_03_SceneGlobalQuery.html', this)">全局查询</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_03_SceneLocalQuery.html', this)">局部查询</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_03_SceneProcessQueryResult.html', this)">查询结构访问</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_03_SceneGlobalQuery.js')">全局查询</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_03_SceneLocalQuery.js')">局部查询</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_03_SceneProcessQueryResult.js')">查询结构访问</li>
                     </ul>
                 </li>
                 <li>
                     <h4>事件</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample('./html/sample_04_GlobalEvents.html', this)">全局事件</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_04_ThingEvents.html', this)">物体事件</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_04_GlobalEvents.js')">全局事件</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_04_ThingEvents.js')">物体事件</li>
                     </ul>
                 </li>
                 <li>
                     <h4>物体</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample('./html/sample_05_CreateAndDestoryThing.html', this)">创建与删除</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_05_BoundingBox.html', this)">包围盒</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_CreateAndDestoryThing.js')">创建与删除</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_BoundingBox.js')">包围盒</li>
                         <!-- <li onclick="">坐标轴</li> -->
                         <!-- <li onclick="">线框图</li> -->
-                        <li class="item-li" onclick="manageSample('./html/sample_05_CarControl.html', this)">位置旋转缩放控制</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_05_CarMoving.html', this)">移动和路径运动</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_05_AlphaBlend.html', this)">半透明</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_05_Color.html', this)">颜色</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_05_Texture.html', this)">贴图</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_05_Shining.html', this)">闪烁</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_CarControl.js')">位置旋转缩放控制</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_CarMoving.js')">移动和路径运动</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_AlphaBlend.js')">半透明</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_Color.js')">颜色</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_Texture.js')">贴图</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_Shining.js')">闪烁</li>
                         <!-- <li onclick="">勾边</li> -->
                         <!-- <li onclick="">物体链接</li> -->
                         <!-- <li onclick="">角色动画</li> -->
@@ -57,8 +57,8 @@
                 <li>
                     <h4>视角控制</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample('./html/sample_06_LookAtObjects.html', this)">聚焦</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_06_CameraFly.html', this)">飞行</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_06_LookAtObjects.js')">聚焦</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_06_CameraFly.js')">飞行</li>
                         <!-- <li onclick="">3D-2D切换</li> -->
                         <!-- <li onclick="">第一人称</li> -->
                     </ul>
@@ -66,20 +66,37 @@
                 <li>
                     <h4>界面</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample('./html/sample_07_EmbeddedWebView.html', this)">内嵌页面</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_07_EmbeddedWebView.js')">内嵌页面</li>
                     </ul>
                 </li>
                 <li>
                     <h4>环境</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample('./html/sample_08_SkyBox.html', this)">天空</li>
-                        <li class="item-li" onclick="manageSample('./html/sample_08_BackgroundColor.html', this)">背景色</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_08_SkyBox.js')">天空</li>
+                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_08_BackgroundColor.js')">背景色</li>
                         <!-- <li onclick="">灯光</li> -->
                     </ul>
                 </li>
             </ul>
         </div>
-        <div id="content_sample" style="height: 100%"></div>
+        <div id="content_sample" style="height: 100%">
+            <div class="content-middle">
+                <div class="content-section">
+                    <div id="btn" class="btn">执行代码</div>
+                    <pre id="editor" class="editor active"></pre>   
+                    <pre id="editor_html" class="editor"></pre>
+                    <pre id="editor_css" class="editor"></pre>
+                    <div class="btn-l">
+                        <p class="btn-p active">js</p>
+                        <p class="btn-p">html</p>
+                        <p class="btn-p">css</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-browser">
+                <iframe id="ifId" name="ifName" src="./html/ex1.html" frameborder="0"></iframe>
+            </div>
+        </div>
     </div>
 </div>
 <script src="./lib/ScriptEditor/assets/plugin/ace-builds/src-noconflict/ace.js"></script>
@@ -87,56 +104,4 @@
 <script src="./lib/ScriptEditor/assets/plugin/jquery/js/jquery-latest.js"></script>
 <script src="./lib/ScriptEditor/javascripts/nodejs.js"></script>
 <script src="./lib/ScriptEditor/demos/demos.js"></script>
-<script>
-    // 二级菜单
-    var oul = document.getElementById('list');
-    var oH4 = oul.getElementsByTagName('h4');
-    var aul = oul.getElementsByTagName('ul');
-    var aulList = [];
-    var aulList = [];
-    for(var i = 0, oh4Len = oH4.length; i < oh4Len; i++) {
-        aulList.push(aul[i]);
-        oH4[i].index  = i;
-        oH4[i].onclick = function(){
-            var _this = this.index;
-            for(var h = 0; h < aulList.length; h++) {
-                if (h != _this) {
-                    aulList[h].style.display='none';
-                    oH4[h].className ='';
-                } else {
-                    //如果当前的ul是关闭的，则展开，否则关闭
-                    if(this.className ==''){
-                        aul[_this].style.display = 'block';
-                        oH4[_this].className ='active';
-                    }else{
-                        aul[_this].style.display = 'none';
-                        oH4[_this].className ='';
-                    }
-                }
-            }
-        }
-    }
-
-    var liObj = $('.item-li');
-    // for(var i = 0, l = liObj.length; i < l; i++) {
-    //     liObj[i].onclick = function() {
-            
-    //     }
-    // }
-    function manageSample(url, target) {
-        var _this = target;
-        $.ajax({
-            url: url,
-            type: 'get',
-            dataType: 'html',
-            success: function(htmlData) {
-                $('#content_sample').html(htmlData);
-                for(var j = 0, len = liObj.length; j < len; j++) {
-                    $(liObj[j]).removeClass('active');
-                }
-                $(_this).addClass('active');
-            }
-        })
-    }
-    manageSample('./html/sample_01_HelloWorld.html', $('#hello'));
-</script>
+<script src="./js/sample.js"></script>

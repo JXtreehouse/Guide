@@ -1,9 +1,9 @@
 // 设置js编辑器
 var editor = ace.edit("editor");
+console.log(editor);
 editor.getSession().setUseWorker(true);
 editor.setTheme("ace/theme/monokai");
 // editor.setFontSize(16);
-//editor.setTheme("ace/theme/tomorrow");
 editor.getSession().setMode("ace/mode/javascript");
 editor.getSession().setUseWrapMode(true);
 editor.getSession().setWrapLimitRange(null, null);
@@ -86,22 +86,6 @@ ace.config.loadModule('ace/ext/tern', function () {
     }
 });
 
-// var code = "var app = new t3d.App({\n\
-//     el: 'div3d',  // 渲染到dom \n\
-//     ak: 'app_test_key',      // 密钥 \n\
-//     url: 'https://speech.uinnova.com/static/models/hw2', // 所渲染的3D模型\n\
-//     complete: function () { // 加载完成回调    \n\
-//         console.log('app scene loaded');\n\
-//         app.buildings[0].floors[0].roofNode.visible = false;\n\
-//     }\
-// }); "
-
-// setTimeout(function(){
-    // var el = document.getElementById("editor");
-    // el.env.editor.setValue(code, 1);
-// }, 1000);
-
-
 // 设置html编辑器
 var editorHtml = ace.edit('editor_html');
 editorHtml.setTheme("ace/theme/monokai");
@@ -129,18 +113,16 @@ function f1() {
     var scripts = iframe.contentWindow.document.getElementsByTagName('script');
     var script = scripts[scripts.length-1];
     script.innerHTML = text;
-}
-iframe.onload = function(){ 
-    f1(); 
-}; 
+} 
+if (iframe.attachEvent){  // IE 
+    iframe.attachEvent("onload", f1);  
+} else {  // 非IE  
+    iframe.onload = f1;
+} 
 // 注册提交代码事件
-btn.onclick = function() {
+btn.onclick = reloadIframe;
+function reloadIframe() {
     document.getElementById('ifId').contentWindow.location.reload(true); 
-    if (iframe.attachEvent){  // IE 
-        iframe.attachEvent("onload", f1);  
-    } else {  // 非IE  
-        iframe.onload = f1;
-    }  
 }
 
 // 编辑器切换
@@ -161,5 +143,74 @@ for(var i = 0; i < l; i++) {
         editorCss.setTheme("ace/theme/monokai");
     }
 }
-// setTimeout(f1, 3000);
-// f1();
+
+// 二级菜单
+var oul = document.getElementById('list');
+var oH4 = oul.getElementsByTagName('h4');
+var aul = oul.getElementsByTagName('ul');
+var aulList = [];
+var aulList = [];
+for(var i = 0, oh4Len = oH4.length; i < oh4Len; i++) {
+    aulList.push(aul[i]);
+    oH4[i].index  = i;
+    oH4[i].onclick = function(){
+        var _this = this.index;
+        for(var h = 0; h < aulList.length; h++) {
+            if (h != _this) {
+                aulList[h].style.display='none';
+                oH4[h].className ='';
+            } else {
+                //如果当前的ul是关闭的，则展开，否则关闭
+                if(this.className ==''){
+                    aul[_this].style.display = 'block';
+                    oH4[_this].className ='active';
+                }else{
+                    aul[_this].style.display = 'none';
+                    oH4[_this].className ='';
+                }
+            }
+        }
+    }
+}
+var liObj = $('.item-li');
+var f = {
+    flagJs: false,
+    flagHtml: false,
+    flagCss: false
+}
+function manageSample(target, url, urlHtml, urlCss) {
+    var url2 = urlHtml || './sample/sampleHtml/sample_01_Box.html';
+    var url3 = urlCss || './sample/sampleCss/sample_01_Box.css';
+    // 设置高亮
+    var _this = target;
+    for(var j = 0, len = liObj.length; j < len; j++) {
+        $(liObj[j]).removeClass('active');
+    }
+    $(_this).addClass('active');
+    // 请求文件
+    manage(url, editor, 'flagJs');
+    manage(url2, editorHtml, 'flagHtml');
+    manage(url3, editorCss, 'flagCss');
+}
+function manage(url, editor, flags) {
+    $.ajax({
+        url: url,
+        type: 'get',
+        dataType: 'text',
+        success: function(htmlData) {
+            // 设置js编辑框内容
+            editor.setValue(htmlData);
+            editor.focus();
+            f[flags] = true;
+            // 重新加载iframe页面
+            if (f.flagJs && f.flagHtml && f.flagCss) {
+                setTimeout(reloadIframe, 300);
+                f.flagJs = false;
+                f.flagHtml = false;
+                f.flagCss = false;
+            }
+        }
+    })
+}
+manageSample($('#hello'), './sample/sampleJs/sample_01_HelloWorld.js');
+
