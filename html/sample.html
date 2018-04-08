@@ -5,48 +5,51 @@
                 <li>
                     <h4>开始</h4>
                     <ul class="item" style="display: block">
-                        <li id="hello" class="item-li active" onclick="manageSample(this, './sample/sampleJs/sample_01_Box.js')">HelloWorld</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_01_DeveloperUseAppKey.js')">开发者key</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_01_CreatePrimitives.js')">创建几何体</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_01_Box.js')">创建立方体</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_01_multi.js', './sample/sampleHtml/sample_01_multi.html', './sample/sampleCss/sample_01_multi.css')">多场景</li>
+                        <li id="hello" class="item-li active" onclick="manageSample(this, 'HelloWorld.js')">HelloWorld</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_01_DeveloperUseAppKey.js')">开发者key</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_01_Box.js')">创建立方体</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_01_CreatePrimitives.js')">创建几何体</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_01_multi.js', 'sample_01_multi.html', 'sample_01_multi.css')">多场景</li>
                     </ul>
                 </li>
                 <li>
                     <h4>场景</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_02_SceneThings.js')">场景对象</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_02_SceneThings.js')">访问对象</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_02_SceneTree.js', 'sample_02_SceneTree.html')">场景结构</li>
                         <!-- <li>场景结构</li> -->
                     </ul>
                 </li>
                 <li>
                     <h4>查询</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_03_SceneGlobalQuery.js')">全局查询</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_03_SceneLocalQuery.js')">局部查询</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_03_SceneProcessQueryResult.js')">查询结构访问</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_03_SceneGlobalQuery.js', 'sample_03_SceneGlobalQuery.html', 'sample_button.css')">全局查询</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_03_SceneLocalQuery.js', 'sample_03_SceneLocalQuery.html', 'sample_button.css')">局部查询</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_03_SceneProcessQueryResult.js')">查询结果</li>
                     </ul>
                 </li>
                 <li>
                     <h4>事件</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_04_GlobalEvents.js')">全局事件</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_04_ThingEvents.js')">物体事件</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_04_GlobalEvents.js')">全局事件</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_04_ThingEvents.js')">物体事件</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_04_DragEvents.js')">拖拽事件</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_04_HoverEvents.js')">焦点事件</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_04_RightClickSamePoint.js')">原地点击</li>
                     </ul>
                 </li>
                 <li>
                     <h4>物体</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_CreateAndDestoryThing.js')">创建与删除</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_BoundingBox.js')">包围盒</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_05_CreateAndDestoryThing.js', 'sample_05_CreateAndDestoryThing.html', 'sample_button.css')">创建和删除</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_05_BoundingBox.js')">包围盒</li>
                         <!-- <li onclick="">坐标轴</li> -->
                         <!-- <li onclick="">线框图</li> -->
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_CarControl.js')">位置旋转缩放控制</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_CarMoving.js')">移动和路径运动</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_AlphaBlend.js')">半透明</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_Color.js')">颜色</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_Texture.js')">贴图</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_05_Shining.js')">闪烁</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_05_TRS.js', 'sample_05_TRS.html', 'sample_button.css')">位置/旋转/缩放</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_05_MoveTo.js')">移动</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_05_MovePath.js')">延路径移动</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_05_AlphaBlend.js', 'sample_05_AlphaBlend.html', 'sample_button.css')">颜色和透明</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_05_Texture.js', 'sample_05_Texture.html', 'sample_button.css')">贴图</li>
                         <!-- <li onclick="">勾边</li> -->
                         <!-- <li onclick="">物体链接</li> -->
                         <!-- <li onclick="">角色动画</li> -->
@@ -55,25 +58,29 @@
                     </ul>
                 </li>
                 <li>
-                    <h4>视角控制</h4>
+                    <h4>摄影机</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_06_LookAtObjects.js')">聚焦</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_06_CameraFly.js')">飞行</li>
-                        <!-- <li onclick="">3D-2D切换</li> -->
+                        <li class="item-li" onclick="manageSample(this, 'sample_06_CameraBasic.js', 'sample_06_CameraBasic.html', 'sample_button.css')">视角</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_06_CameraFly.js')">飞行</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_06_CameraSwitch2D.js', 'sample_06_CameraSwitch2D.html', 'sample_button.css')">3D/2D切换</li>
                         <!-- <li onclick="">第一人称</li> -->
                     </ul>
                 </li>
                 <li>
                     <h4>界面</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_07_EmbeddedWebView.js')">内嵌页面</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_07_ElementUI.js', 'sample_07_ElementUI.html', 'sample_07_ElementUI.css')">UI界面</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_07_Marker.js')">Marker标记</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_07_Widget_Panel.js')">Widget面板</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_07_Widget_ToolBar.js')">Widget工具条</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_07_Widget_ProgressBar.js')">Widget进度条</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_07_EmbeddedWebView.js')">内嵌页面</li>
                     </ul>
                 </li>
                 <li>
                     <h4>环境</h4>
                     <ul class="item">
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_08_SkyBox.js')">天空</li>
-                        <li class="item-li" onclick="manageSample(this, './sample/sampleJs/sample_08_BackgroundColor.js')">背景色</li>
+                        <li class="item-li" onclick="manageSample(this, 'sample_08_SkyBox.js', 'sample_08_SkyBox.html', 'sample_button.css')">天空</li>
                         <!-- <li onclick="">灯光</li> -->
                     </ul>
                 </li>

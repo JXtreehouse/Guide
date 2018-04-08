@@ -1,0 +1,14 @@
+#div3d {
+    width: 100%;
+    height: 100%;
+}
+.btns {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.btns .btn{
+    width: 80px;
+    display: block;
+    margin: 5px 0 0px 5px;
+}

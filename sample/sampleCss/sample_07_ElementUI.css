@@ -1,0 +1,71 @@
+#div3d {
+    width: 100%;
+    height:calc(100% - 30px);
+}
+.signboards{
+	position: relative;
+}
+.signboard{
+	font-size: 12px;
+	width: 120px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, .6);
+	border: 3px solid #eeeeee;
+	border-radius: 8px;
+	color: #eee;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: none;
+}
+.s1{
+	margin: 5px 0px 5px 0px;
+	line-height: 32px;
+	overflow: hidden;
+}
+.span-l{
+	float: left;
+}
+.span-r{
+	float: right;
+}
+.icon{
+	width: 30px;
+	height: 30px;
+	background:url("https://speech.uinnova.com/static/liangyw/images/hydrant.png") no-repeat center;
+	margin: 1px 1px 1px 5px;
+}
+.font{
+	margin: 0px 0px 0px 3px;
+}
+.point{
+	width: 12px;
+	height: 12px;
+	background-color: #18EB20;
+	border-radius: 50%;
+	margin: 10px 5px 10px 0px;
+}
+.s2{
+	margin: 5px 0px 10px 0px;
+	line-height: 18px;
+	font-size: 10px;
+	overflow: hidden;
+}
+.font1{
+	margin: 0px 10px 0px 10px;
+}
+.font2{
+	width: 70px;
+	background-color: #2480E3;
+}
+.point-top{
+	position: absolute;
+	top: -7px;
+	right: -7px;
+	background-color: #3F6781;
+	width: 10px;
+	height: 10px;
+	border: 3px solid #eee;
+	border-radius: 50%;
+}

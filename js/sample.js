@@ -90,11 +90,21 @@ ace.config.loadModule('ace/ext/tern', function () {
 var editorHtml = ace.edit('editor_html');
 editorHtml.setTheme("ace/theme/monokai");
 editorHtml.getSession().setMode("ace/mode/html");
+// editorHtml.setOptions({
+//     enableBasicAutocompletion: true,
+//     enableSnippets: true,
+//     enableLiveAutocompletion: true
+// });
 
 // 设置css编辑器
 var editorCss = ace.edit('editor_css');
 editorCss.setTheme("ace/theme/monokai");
 editorCss.getSession().setMode("ace/mode/css");
+// editorCss.setOptions({
+//     enableBasicAutocompletion: true,
+//     enableSnippets: true,
+//     enableLiveAutocompletion: true
+// });
 
 // 获取标签
 var btn = document.getElementById('btn');
@@ -111,7 +121,7 @@ function f1() {
     var content = iframe.contentWindow.document.getElementById('content');
     content.innerHTML = textHtml;
     var scripts = iframe.contentWindow.document.getElementsByTagName('script');
-    var script = scripts[scripts.length-1];
+    var script = scripts[scripts.length - 1];
     script.innerHTML = text;
 } 
 if (iframe.attachEvent){  // IE 
@@ -179,8 +189,19 @@ var f = {
     flagCss: false
 }
 function manageSample(target, url, urlHtml, urlCss) {
+
+    // larrow 2018.2.12
+    if (url && url.indexOf('./sample/sampleJs/') != 0)
+        url = './sample/sampleJs/' + url;
+    if (urlHtml && urlHtml.indexOf('./sample/sampleHtml/') != 0)
+        urlHtml = './sample/sampleHtml/' + urlHtml;
+    if (urlCss && urlCss.indexOf('./sample/sampleCss/') != 0)
+        urlCss = './sample/sampleCss/' + urlCss;
+    // larrow 2018.2.12
+
     var url2 = urlHtml || './sample/sampleHtml/sample_01_Box.html';
     var url3 = urlCss || './sample/sampleCss/sample_01_Box.css';
+
     // 设置高亮
     var _this = target;
     for(var j = 0, len = liObj.length; j < len; j++) {
@@ -201,6 +222,7 @@ function manage(url, editor, flags) {
             // 设置js编辑框内容
             editor.setValue(htmlData);
             editor.focus();
+            editor.moveCursorTo(0, 0);
             f[flags] = true;
             // 重新加载iframe页面
             if (f.flagJs && f.flagHtml && f.flagCss) {

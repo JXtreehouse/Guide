@@ -15,6 +15,7 @@
     }
     body {
         overflow: hidden;
+        position: relative;
     }
     html, body {
         height: 100%;
@@ -26,19 +27,33 @@
     }
   </style>
   <style></style>
+
+  <!-- larrow To: LiangYW 添加了jquery.tree的支持，用于某个例子 -->
+  <link rel="stylesheet" type="text/css" href="/examples/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="/examples/themes/icon.css">
+  <script type="text/javascript" src="/guide/lib/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="/examples/js/jquery.easyui.min.js"></script>
+
 </head>
 <body>
     <div id="content"></div>
-    <script src="https://speech.uinnova.com/static/release/thing3d.min.js"></script>
-    <!-- <script src="../../dist/thing3d.js" type="text/javascript" charset="utf-8"></script> -->
+    <!--<script src="https://speech.uinnova.com/static/release/thing3d.min.js"></script>-->
+    <script src="/dist/thing3d.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- larrow 界面相关，后面合并成一个 -->
+    <script src="https://speech.uinnova.com/static/release/dat.gui.js"></script>
+    <script src="/examples/js/t3d.widget.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/examples/js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+    
+
     <script src="../lib/screenlog.js"></script>
     <script>
         window.onload = function () {
-            console.log(1);
             parent.window.onload = parent.window.f1;
         }
         screenLog.init();
     </script>
+    
 <script></script>
 </body>
 </html>
